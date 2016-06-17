@@ -59,7 +59,7 @@ public class GetListBenchmark {
 	}
 	
 	@Benchmark
-	public void getByIndex(Blackhole bh) {
+	public void getByIndexForEachLoop(Blackhole bh) {
 		for (int x : randomNos)
 			bh.consume(list.get(x));
 	}

@@ -1,4 +1,4 @@
-package de.darmstadt.tu.dvs.benchmark.list.collection.generated;
+package de.darmstadt.tu.dvs.benchmark.map.generated;
 
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -32,7 +32,7 @@ import org.openjdk.jmh.infra.BenchmarkParams;
 import org.openjdk.jmh.infra.IterationParams;
 
 @Generated("org.openjdk.jmh.generators.core.BenchmarkGenerator")
-public final class GetListBenchmark_getByIndex {
+public final class GetMapBenchmark_measureGetByForEachLoop {
 
     private boolean p0, p0_1, p0_2, p0_3, p0_4, p0_5, p0_6, p0_7, p0_8, p0_9, p0_10, p0_11, p0_12, p0_13, p0_14, p0_15;
     private boolean p1, p1_1, p1_2, p1_3, p1_4, p1_5, p1_6, p1_7, p1_8, p1_9, p1_10, p1_11, p1_12, p1_13, p1_14, p1_15;
@@ -52,10 +52,10 @@ public final class GetListBenchmark_getByIndex {
     private boolean p15, p15_1, p15_2, p15_3, p15_4, p15_5, p15_6, p15_7, p15_8, p15_9, p15_10, p15_11, p15_12, p15_13, p15_14, p15_15;
     int startRndMask;
 
-    public Collection<? extends Result> getByIndex_Throughput(InfraControl control, ThreadParams threadParams) throws Throwable {
+    public Collection<? extends Result> measureGetByForEachLoop_Throughput(InfraControl control, ThreadParams threadParams) throws Throwable {
         if (threadParams.getSubgroupIndex() == 0) {
             Blackhole_1_jmh l_blackhole1_1 = _jmh_tryInit_f_blackhole1_1(control, threadParams);
-            GetListBenchmark_1_jmh l_getlistbenchmark0_0 = _jmh_tryInit_f_getlistbenchmark0_0(control, threadParams);
+            GetMapBenchmark_1_jmh l_getmapbenchmark0_0 = _jmh_tryInit_f_getmapbenchmark0_0(control, threadParams);
             Blackhole_1_jmh l_blackhole1_2 = _jmh_tryInit_f_blackhole1_2(control, threadParams);
 
             control.preSetup();
@@ -70,16 +70,16 @@ public final class GetListBenchmark_getByIndex {
 
             control.announceWarmupReady();
             while (control.warmupShouldWait) {
-                l_getlistbenchmark0_0.getByIndex(l_blackhole1_2);
+                l_getmapbenchmark0_0.measureGetByForEachLoop(l_blackhole1_2);
             }
 
             RawResults res = new RawResults(control.benchmarkParams.getOpsPerInvocation());
-            getByIndex_thrpt_jmhLoop(control, res, l_blackhole1_2, l_getlistbenchmark0_0, l_blackhole1_1);
+            measureGetByForEachLoop_thrpt_jmhLoop(control, res, l_blackhole1_2, l_getmapbenchmark0_0, l_blackhole1_1);
             res.operations /= control.iterationParams.getBatchSize();
             control.announceWarmdownReady();
             try {
                 while (control.warmdownShouldWait) {
-                    l_getlistbenchmark0_0.getByIndex(l_blackhole1_2);
+                    l_getmapbenchmark0_0.measureGetByForEachLoop(l_blackhole1_2);
                 }
                 control.preTearDown();
             } catch (InterruptedException ie) {
@@ -93,31 +93,31 @@ public final class GetListBenchmark_getByIndex {
             }
 
             if (control.isLastIteration()) {
-                if (l_getlistbenchmark0_0.readyTrial) {
-                    l_getlistbenchmark0_0.teardown();
-                    l_getlistbenchmark0_0.readyTrial = false;
+                if (l_getmapbenchmark0_0.readyTrial) {
+                    l_getmapbenchmark0_0.teardown();
+                    l_getmapbenchmark0_0.readyTrial = false;
                 }
-                if (l_getlistbenchmark0_0.readyTrial) {
-                    l_getlistbenchmark0_0.teardown();
-                    l_getlistbenchmark0_0.readyTrial = false;
+                if (l_getmapbenchmark0_0.readyTrial) {
+                    l_getmapbenchmark0_0.teardown();
+                    l_getmapbenchmark0_0.readyTrial = false;
                 }
                 f_blackhole1_2 = null;
-                f_getlistbenchmark0_0 = null;
+                f_getmapbenchmark0_0 = null;
                 f_blackhole1_1 = null;
             }
             Collection<Result> results = new ArrayList<Result>();
-            results.add(new ThroughputResult(ResultRole.PRIMARY, "getByIndex", res.getOperations(), res.getTime(), control.benchmarkParams.getTimeUnit()));
+            results.add(new ThroughputResult(ResultRole.PRIMARY, "measureGetByForEachLoop", res.getOperations(), res.getTime(), control.benchmarkParams.getTimeUnit()));
             return results;
         } else
             throw new IllegalStateException("Harness failed to distribute threads among groups properly");
     }
 
-    public void getByIndex_thrpt_jmhLoop(InfraControl control, RawResults result, Blackhole_1_jmh l_blackhole1_2, GetListBenchmark_1_jmh l_getlistbenchmark0_0, Blackhole_1_jmh l_blackhole1_1) throws Throwable {
+    public void measureGetByForEachLoop_thrpt_jmhLoop(InfraControl control, RawResults result, Blackhole_1_jmh l_blackhole1_2, GetMapBenchmark_1_jmh l_getmapbenchmark0_0, Blackhole_1_jmh l_blackhole1_1) throws Throwable {
         long operations = 0;
         long realTime = 0;
         result.startTime = System.nanoTime();
         do {
-            l_getlistbenchmark0_0.getByIndex(l_blackhole1_2);
+            l_getmapbenchmark0_0.measureGetByForEachLoop(l_blackhole1_2);
             operations++;
         } while(!control.isDone);
         result.stopTime = System.nanoTime();
@@ -126,10 +126,10 @@ public final class GetListBenchmark_getByIndex {
     }
 
 
-    public Collection<? extends Result> getByIndex_AverageTime(InfraControl control, ThreadParams threadParams) throws Throwable {
+    public Collection<? extends Result> measureGetByForEachLoop_AverageTime(InfraControl control, ThreadParams threadParams) throws Throwable {
         if (threadParams.getSubgroupIndex() == 0) {
             Blackhole_1_jmh l_blackhole1_1 = _jmh_tryInit_f_blackhole1_1(control, threadParams);
-            GetListBenchmark_1_jmh l_getlistbenchmark0_0 = _jmh_tryInit_f_getlistbenchmark0_0(control, threadParams);
+            GetMapBenchmark_1_jmh l_getmapbenchmark0_0 = _jmh_tryInit_f_getmapbenchmark0_0(control, threadParams);
             Blackhole_1_jmh l_blackhole1_2 = _jmh_tryInit_f_blackhole1_2(control, threadParams);
 
             control.preSetup();
@@ -144,16 +144,16 @@ public final class GetListBenchmark_getByIndex {
 
             control.announceWarmupReady();
             while (control.warmupShouldWait) {
-                l_getlistbenchmark0_0.getByIndex(l_blackhole1_2);
+                l_getmapbenchmark0_0.measureGetByForEachLoop(l_blackhole1_2);
             }
 
             RawResults res = new RawResults(control.benchmarkParams.getOpsPerInvocation());
-            getByIndex_avgt_jmhLoop(control, res, l_blackhole1_2, l_getlistbenchmark0_0, l_blackhole1_1);
+            measureGetByForEachLoop_avgt_jmhLoop(control, res, l_blackhole1_2, l_getmapbenchmark0_0, l_blackhole1_1);
             res.operations /= control.iterationParams.getBatchSize();
             control.announceWarmdownReady();
             try {
                 while (control.warmdownShouldWait) {
-                    l_getlistbenchmark0_0.getByIndex(l_blackhole1_2);
+                    l_getmapbenchmark0_0.measureGetByForEachLoop(l_blackhole1_2);
                 }
                 control.preTearDown();
             } catch (InterruptedException ie) {
@@ -167,31 +167,31 @@ public final class GetListBenchmark_getByIndex {
             }
 
             if (control.isLastIteration()) {
-                if (l_getlistbenchmark0_0.readyTrial) {
-                    l_getlistbenchmark0_0.teardown();
-                    l_getlistbenchmark0_0.readyTrial = false;
+                if (l_getmapbenchmark0_0.readyTrial) {
+                    l_getmapbenchmark0_0.teardown();
+                    l_getmapbenchmark0_0.readyTrial = false;
                 }
-                if (l_getlistbenchmark0_0.readyTrial) {
-                    l_getlistbenchmark0_0.teardown();
-                    l_getlistbenchmark0_0.readyTrial = false;
+                if (l_getmapbenchmark0_0.readyTrial) {
+                    l_getmapbenchmark0_0.teardown();
+                    l_getmapbenchmark0_0.readyTrial = false;
                 }
                 f_blackhole1_2 = null;
-                f_getlistbenchmark0_0 = null;
+                f_getmapbenchmark0_0 = null;
                 f_blackhole1_1 = null;
             }
             Collection<Result> results = new ArrayList<Result>();
-            results.add(new AverageTimeResult(ResultRole.PRIMARY, "getByIndex", res.getOperations(), res.getTime(), control.benchmarkParams.getTimeUnit()));
+            results.add(new AverageTimeResult(ResultRole.PRIMARY, "measureGetByForEachLoop", res.getOperations(), res.getTime(), control.benchmarkParams.getTimeUnit()));
             return results;
         } else
             throw new IllegalStateException("Harness failed to distribute threads among groups properly");
     }
 
-    public void getByIndex_avgt_jmhLoop(InfraControl control, RawResults result, Blackhole_1_jmh l_blackhole1_2, GetListBenchmark_1_jmh l_getlistbenchmark0_0, Blackhole_1_jmh l_blackhole1_1) throws Throwable {
+    public void measureGetByForEachLoop_avgt_jmhLoop(InfraControl control, RawResults result, Blackhole_1_jmh l_blackhole1_2, GetMapBenchmark_1_jmh l_getmapbenchmark0_0, Blackhole_1_jmh l_blackhole1_1) throws Throwable {
         long operations = 0;
         long realTime = 0;
         result.startTime = System.nanoTime();
         do {
-            l_getlistbenchmark0_0.getByIndex(l_blackhole1_2);
+            l_getmapbenchmark0_0.measureGetByForEachLoop(l_blackhole1_2);
             operations++;
         } while(!control.isDone);
         result.stopTime = System.nanoTime();
@@ -200,10 +200,10 @@ public final class GetListBenchmark_getByIndex {
     }
 
 
-    public Collection<? extends Result> getByIndex_SampleTime(InfraControl control, ThreadParams threadParams) throws Throwable {
+    public Collection<? extends Result> measureGetByForEachLoop_SampleTime(InfraControl control, ThreadParams threadParams) throws Throwable {
         if (threadParams.getSubgroupIndex() == 0) {
             Blackhole_1_jmh l_blackhole1_1 = _jmh_tryInit_f_blackhole1_1(control, threadParams);
-            GetListBenchmark_1_jmh l_getlistbenchmark0_0 = _jmh_tryInit_f_getlistbenchmark0_0(control, threadParams);
+            GetMapBenchmark_1_jmh l_getmapbenchmark0_0 = _jmh_tryInit_f_getmapbenchmark0_0(control, threadParams);
             Blackhole_1_jmh l_blackhole1_2 = _jmh_tryInit_f_blackhole1_2(control, threadParams);
 
             control.preSetup();
@@ -218,17 +218,17 @@ public final class GetListBenchmark_getByIndex {
 
             control.announceWarmupReady();
             while (control.warmupShouldWait) {
-                l_getlistbenchmark0_0.getByIndex(l_blackhole1_2);
+                l_getmapbenchmark0_0.measureGetByForEachLoop(l_blackhole1_2);
             }
 
             int targetSamples = (int) (control.getDuration(TimeUnit.MILLISECONDS) * 20); // at max, 20 timestamps per millisecond
         int batchSize = control.iterationParams.getBatchSize();
             SampleBuffer buffer = new SampleBuffer();
-            getByIndex_sample_jmhLoop(control, buffer, targetSamples, control.benchmarkParams.getOpsPerInvocation(), batchSize, l_blackhole1_2, l_getlistbenchmark0_0, l_blackhole1_1);
+            measureGetByForEachLoop_sample_jmhLoop(control, buffer, targetSamples, control.benchmarkParams.getOpsPerInvocation(), batchSize, l_blackhole1_2, l_getmapbenchmark0_0, l_blackhole1_1);
             control.announceWarmdownReady();
             try {
                 while (control.warmdownShouldWait) {
-                    l_getlistbenchmark0_0.getByIndex(l_blackhole1_2);
+                    l_getmapbenchmark0_0.measureGetByForEachLoop(l_blackhole1_2);
                 }
                 control.preTearDown();
             } catch (InterruptedException ie) {
@@ -242,26 +242,26 @@ public final class GetListBenchmark_getByIndex {
             }
 
             if (control.isLastIteration()) {
-                if (l_getlistbenchmark0_0.readyTrial) {
-                    l_getlistbenchmark0_0.teardown();
-                    l_getlistbenchmark0_0.readyTrial = false;
+                if (l_getmapbenchmark0_0.readyTrial) {
+                    l_getmapbenchmark0_0.teardown();
+                    l_getmapbenchmark0_0.readyTrial = false;
                 }
-                if (l_getlistbenchmark0_0.readyTrial) {
-                    l_getlistbenchmark0_0.teardown();
-                    l_getlistbenchmark0_0.readyTrial = false;
+                if (l_getmapbenchmark0_0.readyTrial) {
+                    l_getmapbenchmark0_0.teardown();
+                    l_getmapbenchmark0_0.readyTrial = false;
                 }
                 f_blackhole1_2 = null;
-                f_getlistbenchmark0_0 = null;
+                f_getmapbenchmark0_0 = null;
                 f_blackhole1_1 = null;
             }
             Collection<Result> results = new ArrayList<Result>();
-            results.add(new SampleTimeResult(ResultRole.PRIMARY, "getByIndex", buffer, control.benchmarkParams.getTimeUnit()));
+            results.add(new SampleTimeResult(ResultRole.PRIMARY, "measureGetByForEachLoop", buffer, control.benchmarkParams.getTimeUnit()));
             return results;
         } else
             throw new IllegalStateException("Harness failed to distribute threads among groups properly");
     }
 
-    public void getByIndex_sample_jmhLoop(InfraControl control, SampleBuffer buffer, int targetSamples, long opsPerInv, int batchSize, Blackhole_1_jmh l_blackhole1_2, GetListBenchmark_1_jmh l_getlistbenchmark0_0, Blackhole_1_jmh l_blackhole1_1) throws Throwable {
+    public void measureGetByForEachLoop_sample_jmhLoop(InfraControl control, SampleBuffer buffer, int targetSamples, long opsPerInv, int batchSize, Blackhole_1_jmh l_blackhole1_2, GetMapBenchmark_1_jmh l_getmapbenchmark0_0, Blackhole_1_jmh l_blackhole1_1) throws Throwable {
         long realTime = 0;
         int rnd = (int)System.nanoTime();
         int rndMask = startRndMask;
@@ -275,7 +275,7 @@ public final class GetListBenchmark_getByIndex {
             }
             for (int b = 0; b < batchSize; b++) {
                 if (control.volatileSpoiler) return;
-                l_getlistbenchmark0_0.getByIndex(l_blackhole1_2);
+                l_getmapbenchmark0_0.measureGetByForEachLoop(l_blackhole1_2);
             }
             if (sample) {
                 buffer.add((System.nanoTime() - time) / opsPerInv);
@@ -290,10 +290,10 @@ public final class GetListBenchmark_getByIndex {
     }
 
 
-    public Collection<? extends Result> getByIndex_SingleShotTime(InfraControl control, ThreadParams threadParams) throws Throwable {
+    public Collection<? extends Result> measureGetByForEachLoop_SingleShotTime(InfraControl control, ThreadParams threadParams) throws Throwable {
         if (threadParams.getSubgroupIndex() == 0) {
             Blackhole_1_jmh l_blackhole1_1 = _jmh_tryInit_f_blackhole1_1(control, threadParams);
-            GetListBenchmark_1_jmh l_getlistbenchmark0_0 = _jmh_tryInit_f_getlistbenchmark0_0(control, threadParams);
+            GetMapBenchmark_1_jmh l_getmapbenchmark0_0 = _jmh_tryInit_f_getmapbenchmark0_0(control, threadParams);
             Blackhole_1_jmh l_blackhole1_2 = _jmh_tryInit_f_blackhole1_2(control, threadParams);
 
             control.preSetup();
@@ -308,7 +308,7 @@ public final class GetListBenchmark_getByIndex {
 
             RawResults res = new RawResults(control.benchmarkParams.getOpsPerInvocation());
         int batchSize = control.iterationParams.getBatchSize();
-            getByIndex_ss_jmhStub(control, batchSize, res, l_blackhole1_2, l_getlistbenchmark0_0, l_blackhole1_1);
+            measureGetByForEachLoop_ss_jmhStub(control, batchSize, res, l_blackhole1_2, l_getmapbenchmark0_0, l_blackhole1_1);
                 control.preTearDown();
             if (l_blackhole1_2.readyIteration) {
                 l_blackhole1_2.readyIteration = false;
@@ -318,31 +318,31 @@ public final class GetListBenchmark_getByIndex {
             }
 
             if (control.isLastIteration()) {
-                if (l_getlistbenchmark0_0.readyTrial) {
-                    l_getlistbenchmark0_0.teardown();
-                    l_getlistbenchmark0_0.readyTrial = false;
+                if (l_getmapbenchmark0_0.readyTrial) {
+                    l_getmapbenchmark0_0.teardown();
+                    l_getmapbenchmark0_0.readyTrial = false;
                 }
-                if (l_getlistbenchmark0_0.readyTrial) {
-                    l_getlistbenchmark0_0.teardown();
-                    l_getlistbenchmark0_0.readyTrial = false;
+                if (l_getmapbenchmark0_0.readyTrial) {
+                    l_getmapbenchmark0_0.teardown();
+                    l_getmapbenchmark0_0.readyTrial = false;
                 }
                 f_blackhole1_2 = null;
-                f_getlistbenchmark0_0 = null;
+                f_getmapbenchmark0_0 = null;
                 f_blackhole1_1 = null;
             }
             Collection<Result> results = new ArrayList<Result>();
-            results.add(new SingleShotResult(ResultRole.PRIMARY, "getByIndex", res.getTime(), control.benchmarkParams.getTimeUnit()));
+            results.add(new SingleShotResult(ResultRole.PRIMARY, "measureGetByForEachLoop", res.getTime(), control.benchmarkParams.getTimeUnit()));
             return results;
         } else
             throw new IllegalStateException("Harness failed to distribute threads among groups properly");
     }
 
-    public void getByIndex_ss_jmhStub(InfraControl control, int batchSize, RawResults result, Blackhole_1_jmh l_blackhole1_2, GetListBenchmark_1_jmh l_getlistbenchmark0_0, Blackhole_1_jmh l_blackhole1_1) throws Throwable {
+    public void measureGetByForEachLoop_ss_jmhStub(InfraControl control, int batchSize, RawResults result, Blackhole_1_jmh l_blackhole1_2, GetMapBenchmark_1_jmh l_getmapbenchmark0_0, Blackhole_1_jmh l_blackhole1_1) throws Throwable {
         long realTime = 0;
         result.startTime = System.nanoTime();
         for (int b = 0; b < batchSize; b++) {
             if (control.volatileSpoiler) return;
-            l_getlistbenchmark0_0.getByIndex(l_blackhole1_2);
+            l_getmapbenchmark0_0.measureGetByForEachLoop(l_blackhole1_2);
         }
         result.stopTime = System.nanoTime();
         result.realTime = realTime;
@@ -371,23 +371,23 @@ public final class GetListBenchmark_getByIndex {
         return f_blackhole1_2;
     }
     
-    GetListBenchmark_1_jmh f_getlistbenchmark0_0;
+    GetMapBenchmark_1_jmh f_getmapbenchmark0_0;
     
-    GetListBenchmark_1_jmh _jmh_tryInit_f_getlistbenchmark0_0(InfraControl control, ThreadParams threadParams) throws Throwable {
-        if (f_getlistbenchmark0_0 == null) {
-            GetListBenchmark_1_jmh val = new GetListBenchmark_1_jmh();
+    GetMapBenchmark_1_jmh _jmh_tryInit_f_getmapbenchmark0_0(InfraControl control, ThreadParams threadParams) throws Throwable {
+        if (f_getmapbenchmark0_0 == null) {
+            GetMapBenchmark_1_jmh val = new GetMapBenchmark_1_jmh();
                 Field f;
-            f = de.darmstadt.tu.dvs.benchmark.list.collection.GetListBenchmark.class.getDeclaredField("size");
+            f = de.darmstadt.tu.dvs.benchmark.map.GetMapBenchmark.class.getDeclaredField("size");
             f.setAccessible(true);
             f.set(val, Integer.valueOf(control.getParam("size")));
-            f = de.darmstadt.tu.dvs.benchmark.list.collection.GetListBenchmark.class.getDeclaredField("type");
+            f = de.darmstadt.tu.dvs.benchmark.map.GetMapBenchmark.class.getDeclaredField("type");
             f.setAccessible(true);
             f.set(val, control.getParam("type"));
             val.setup();
             val.readyTrial = true;
-            f_getlistbenchmark0_0 = val;
+            f_getmapbenchmark0_0 = val;
         }
-        return f_getlistbenchmark0_0;
+        return f_getmapbenchmark0_0;
     }
 
 
@@ -453,7 +453,7 @@ public final class GetListBenchmark_getByIndex {
     static final class Blackhole_1_jmh extends Blackhole_1_jmh_B3 {
     }
     
-    static class GetListBenchmark_1_jmh_B1 extends de.darmstadt.tu.dvs.benchmark.list.collection.GetListBenchmark {
+    static class GetMapBenchmark_1_jmh_B1 extends de.darmstadt.tu.dvs.benchmark.map.GetMapBenchmark {
         private boolean pb1_0, pb1_0_1, pb1_0_2, pb1_0_3, pb1_0_4, pb1_0_5, pb1_0_6, pb1_0_7, pb1_0_8, pb1_0_9, pb1_0_10, pb1_0_11, pb1_0_12, pb1_0_13, pb1_0_14, pb1_0_15;
         private boolean pb1_1, pb1_1_1, pb1_1_2, pb1_1_3, pb1_1_4, pb1_1_5, pb1_1_6, pb1_1_7, pb1_1_8, pb1_1_9, pb1_1_10, pb1_1_11, pb1_1_12, pb1_1_13, pb1_1_14, pb1_1_15;
         private boolean pb1_2, pb1_2_1, pb1_2_2, pb1_2_3, pb1_2_4, pb1_2_5, pb1_2_6, pb1_2_7, pb1_2_8, pb1_2_9, pb1_2_10, pb1_2_11, pb1_2_12, pb1_2_13, pb1_2_14, pb1_2_15;
@@ -472,28 +472,28 @@ public final class GetListBenchmark_getByIndex {
         private boolean pb1_15, pb1_15_1, pb1_15_2, pb1_15_3, pb1_15_4, pb1_15_5, pb1_15_6, pb1_15_7, pb1_15_8, pb1_15_9, pb1_15_10, pb1_15_11, pb1_15_12, pb1_15_13, pb1_15_14, pb1_15_15;
     }
     
-    static class GetListBenchmark_1_jmh_B2 extends GetListBenchmark_1_jmh_B1 {
+    static class GetMapBenchmark_1_jmh_B2 extends GetMapBenchmark_1_jmh_B1 {
         public volatile int setupTrialMutex;
         public volatile int tearTrialMutex;
-        public final static AtomicIntegerFieldUpdater setupTrialMutexUpdater = AtomicIntegerFieldUpdater.newUpdater(GetListBenchmark_1_jmh_B2.class, "setupTrialMutex");
-        public final static AtomicIntegerFieldUpdater tearTrialMutexUpdater = AtomicIntegerFieldUpdater.newUpdater(GetListBenchmark_1_jmh_B2.class, "tearTrialMutex");
+        public final static AtomicIntegerFieldUpdater setupTrialMutexUpdater = AtomicIntegerFieldUpdater.newUpdater(GetMapBenchmark_1_jmh_B2.class, "setupTrialMutex");
+        public final static AtomicIntegerFieldUpdater tearTrialMutexUpdater = AtomicIntegerFieldUpdater.newUpdater(GetMapBenchmark_1_jmh_B2.class, "tearTrialMutex");
     
         public volatile int setupIterationMutex;
         public volatile int tearIterationMutex;
-        public final static AtomicIntegerFieldUpdater setupIterationMutexUpdater = AtomicIntegerFieldUpdater.newUpdater(GetListBenchmark_1_jmh_B2.class, "setupIterationMutex");
-        public final static AtomicIntegerFieldUpdater tearIterationMutexUpdater = AtomicIntegerFieldUpdater.newUpdater(GetListBenchmark_1_jmh_B2.class, "tearIterationMutex");
+        public final static AtomicIntegerFieldUpdater setupIterationMutexUpdater = AtomicIntegerFieldUpdater.newUpdater(GetMapBenchmark_1_jmh_B2.class, "setupIterationMutex");
+        public final static AtomicIntegerFieldUpdater tearIterationMutexUpdater = AtomicIntegerFieldUpdater.newUpdater(GetMapBenchmark_1_jmh_B2.class, "tearIterationMutex");
     
         public volatile int setupInvocationMutex;
         public volatile int tearInvocationMutex;
-        public final static AtomicIntegerFieldUpdater setupInvocationMutexUpdater = AtomicIntegerFieldUpdater.newUpdater(GetListBenchmark_1_jmh_B2.class, "setupInvocationMutex");
-        public final static AtomicIntegerFieldUpdater tearInvocationMutexUpdater = AtomicIntegerFieldUpdater.newUpdater(GetListBenchmark_1_jmh_B2.class, "tearInvocationMutex");
+        public final static AtomicIntegerFieldUpdater setupInvocationMutexUpdater = AtomicIntegerFieldUpdater.newUpdater(GetMapBenchmark_1_jmh_B2.class, "setupInvocationMutex");
+        public final static AtomicIntegerFieldUpdater tearInvocationMutexUpdater = AtomicIntegerFieldUpdater.newUpdater(GetMapBenchmark_1_jmh_B2.class, "tearInvocationMutex");
     
         public boolean readyTrial;
         public boolean readyIteration;
         public boolean readyInvocation;
     }
     
-    static class GetListBenchmark_1_jmh_B3 extends GetListBenchmark_1_jmh_B2 {
+    static class GetMapBenchmark_1_jmh_B3 extends GetMapBenchmark_1_jmh_B2 {
         private boolean pb3_0, pb3_0_1, pb3_0_2, pb3_0_3, pb3_0_4, pb3_0_5, pb3_0_6, pb3_0_7, pb3_0_8, pb3_0_9, pb3_0_10, pb3_0_11, pb3_0_12, pb3_0_13, pb3_0_14, pb3_0_15;
         private boolean pb3_1, pb3_1_1, pb3_1_2, pb3_1_3, pb3_1_4, pb3_1_5, pb3_1_6, pb3_1_7, pb3_1_8, pb3_1_9, pb3_1_10, pb3_1_11, pb3_1_12, pb3_1_13, pb3_1_14, pb3_1_15;
         private boolean pb3_2, pb3_2_1, pb3_2_2, pb3_2_3, pb3_2_4, pb3_2_5, pb3_2_6, pb3_2_7, pb3_2_8, pb3_2_9, pb3_2_10, pb3_2_11, pb3_2_12, pb3_2_13, pb3_2_14, pb3_2_15;
@@ -512,7 +512,7 @@ public final class GetListBenchmark_getByIndex {
         private boolean pb3_15, pb3_15_1, pb3_15_2, pb3_15_3, pb3_15_4, pb3_15_5, pb3_15_6, pb3_15_7, pb3_15_8, pb3_15_9, pb3_15_10, pb3_15_11, pb3_15_12, pb3_15_13, pb3_15_14, pb3_15_15;
     }
     
-    static final class GetListBenchmark_1_jmh extends GetListBenchmark_1_jmh_B3 {
+    static final class GetMapBenchmark_1_jmh extends GetMapBenchmark_1_jmh_B3 {
     }
     
 

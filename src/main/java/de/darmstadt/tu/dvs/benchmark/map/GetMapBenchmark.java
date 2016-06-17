@@ -61,7 +61,7 @@ public class GetMapBenchmark
   }
   
   @Benchmark
-  public void measureMapGet(Blackhole bh)
+  public void measureGetByForEachLoop(Blackhole bh)
   {
     for (int x : this.randomNos) {
       bh.consume(this.map.get("" + x));
@@ -69,7 +69,7 @@ public class GetMapBenchmark
   }
   
   @Benchmark
-  public void measureMapIteratorGet(Blackhole bh)
+  public void measureGetByIterator(Blackhole bh)
   {
     Map.Entry<String, Integer> entry = null;
     Iterator<Map.Entry<String, Integer>> it;

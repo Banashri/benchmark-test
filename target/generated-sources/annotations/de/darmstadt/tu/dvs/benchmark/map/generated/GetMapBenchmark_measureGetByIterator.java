@@ -32,7 +32,7 @@ import org.openjdk.jmh.infra.BenchmarkParams;
 import org.openjdk.jmh.infra.IterationParams;
 
 @Generated("org.openjdk.jmh.generators.core.BenchmarkGenerator")
-public final class GetMapBenchmark_measureMapGet {
+public final class GetMapBenchmark_measureGetByIterator {
 
     private boolean p0, p0_1, p0_2, p0_3, p0_4, p0_5, p0_6, p0_7, p0_8, p0_9, p0_10, p0_11, p0_12, p0_13, p0_14, p0_15;
     private boolean p1, p1_1, p1_2, p1_3, p1_4, p1_5, p1_6, p1_7, p1_8, p1_9, p1_10, p1_11, p1_12, p1_13, p1_14, p1_15;
@@ -52,7 +52,7 @@ public final class GetMapBenchmark_measureMapGet {
     private boolean p15, p15_1, p15_2, p15_3, p15_4, p15_5, p15_6, p15_7, p15_8, p15_9, p15_10, p15_11, p15_12, p15_13, p15_14, p15_15;
     int startRndMask;
 
-    public Collection<? extends Result> measureMapGet_Throughput(InfraControl control, ThreadParams threadParams) throws Throwable {
+    public Collection<? extends Result> measureGetByIterator_Throughput(InfraControl control, ThreadParams threadParams) throws Throwable {
         if (threadParams.getSubgroupIndex() == 0) {
             Blackhole_1_jmh l_blackhole1_1 = _jmh_tryInit_f_blackhole1_1(control, threadParams);
             GetMapBenchmark_1_jmh l_getmapbenchmark0_0 = _jmh_tryInit_f_getmapbenchmark0_0(control, threadParams);
@@ -70,16 +70,16 @@ public final class GetMapBenchmark_measureMapGet {
 
             control.announceWarmupReady();
             while (control.warmupShouldWait) {
-                l_getmapbenchmark0_0.measureMapGet(l_blackhole1_2);
+                l_getmapbenchmark0_0.measureGetByIterator(l_blackhole1_2);
             }
 
             RawResults res = new RawResults(control.benchmarkParams.getOpsPerInvocation());
-            measureMapGet_thrpt_jmhLoop(control, res, l_blackhole1_2, l_getmapbenchmark0_0, l_blackhole1_1);
+            measureGetByIterator_thrpt_jmhLoop(control, res, l_blackhole1_2, l_getmapbenchmark0_0, l_blackhole1_1);
             res.operations /= control.iterationParams.getBatchSize();
             control.announceWarmdownReady();
             try {
                 while (control.warmdownShouldWait) {
-                    l_getmapbenchmark0_0.measureMapGet(l_blackhole1_2);
+                    l_getmapbenchmark0_0.measureGetByIterator(l_blackhole1_2);
                 }
                 control.preTearDown();
             } catch (InterruptedException ie) {
@@ -106,18 +106,18 @@ public final class GetMapBenchmark_measureMapGet {
                 f_blackhole1_1 = null;
             }
             Collection<Result> results = new ArrayList<Result>();
-            results.add(new ThroughputResult(ResultRole.PRIMARY, "measureMapGet", res.getOperations(), res.getTime(), control.benchmarkParams.getTimeUnit()));
+            results.add(new ThroughputResult(ResultRole.PRIMARY, "measureGetByIterator", res.getOperations(), res.getTime(), control.benchmarkParams.getTimeUnit()));
             return results;
         } else
             throw new IllegalStateException("Harness failed to distribute threads among groups properly");
     }
 
-    public void measureMapGet_thrpt_jmhLoop(InfraControl control, RawResults result, Blackhole_1_jmh l_blackhole1_2, GetMapBenchmark_1_jmh l_getmapbenchmark0_0, Blackhole_1_jmh l_blackhole1_1) throws Throwable {
+    public void measureGetByIterator_thrpt_jmhLoop(InfraControl control, RawResults result, Blackhole_1_jmh l_blackhole1_2, GetMapBenchmark_1_jmh l_getmapbenchmark0_0, Blackhole_1_jmh l_blackhole1_1) throws Throwable {
         long operations = 0;
         long realTime = 0;
         result.startTime = System.nanoTime();
         do {
-            l_getmapbenchmark0_0.measureMapGet(l_blackhole1_2);
+            l_getmapbenchmark0_0.measureGetByIterator(l_blackhole1_2);
             operations++;
         } while(!control.isDone);
         result.stopTime = System.nanoTime();
@@ -126,7 +126,7 @@ public final class GetMapBenchmark_measureMapGet {
     }
 
 
-    public Collection<? extends Result> measureMapGet_AverageTime(InfraControl control, ThreadParams threadParams) throws Throwable {
+    public Collection<? extends Result> measureGetByIterator_AverageTime(InfraControl control, ThreadParams threadParams) throws Throwable {
         if (threadParams.getSubgroupIndex() == 0) {
             Blackhole_1_jmh l_blackhole1_1 = _jmh_tryInit_f_blackhole1_1(control, threadParams);
             GetMapBenchmark_1_jmh l_getmapbenchmark0_0 = _jmh_tryInit_f_getmapbenchmark0_0(control, threadParams);
@@ -144,16 +144,16 @@ public final class GetMapBenchmark_measureMapGet {
 
             control.announceWarmupReady();
             while (control.warmupShouldWait) {
-                l_getmapbenchmark0_0.measureMapGet(l_blackhole1_2);
+                l_getmapbenchmark0_0.measureGetByIterator(l_blackhole1_2);
             }
 
             RawResults res = new RawResults(control.benchmarkParams.getOpsPerInvocation());
-            measureMapGet_avgt_jmhLoop(control, res, l_blackhole1_2, l_getmapbenchmark0_0, l_blackhole1_1);
+            measureGetByIterator_avgt_jmhLoop(control, res, l_blackhole1_2, l_getmapbenchmark0_0, l_blackhole1_1);
             res.operations /= control.iterationParams.getBatchSize();
             control.announceWarmdownReady();
             try {
                 while (control.warmdownShouldWait) {
-                    l_getmapbenchmark0_0.measureMapGet(l_blackhole1_2);
+                    l_getmapbenchmark0_0.measureGetByIterator(l_blackhole1_2);
                 }
                 control.preTearDown();
             } catch (InterruptedException ie) {
@@ -180,18 +180,18 @@ public final class GetMapBenchmark_measureMapGet {
                 f_blackhole1_1 = null;
             }
             Collection<Result> results = new ArrayList<Result>();
-            results.add(new AverageTimeResult(ResultRole.PRIMARY, "measureMapGet", res.getOperations(), res.getTime(), control.benchmarkParams.getTimeUnit()));
+            results.add(new AverageTimeResult(ResultRole.PRIMARY, "measureGetByIterator", res.getOperations(), res.getTime(), control.benchmarkParams.getTimeUnit()));
             return results;
         } else
             throw new IllegalStateException("Harness failed to distribute threads among groups properly");
     }
 
-    public void measureMapGet_avgt_jmhLoop(InfraControl control, RawResults result, Blackhole_1_jmh l_blackhole1_2, GetMapBenchmark_1_jmh l_getmapbenchmark0_0, Blackhole_1_jmh l_blackhole1_1) throws Throwable {
+    public void measureGetByIterator_avgt_jmhLoop(InfraControl control, RawResults result, Blackhole_1_jmh l_blackhole1_2, GetMapBenchmark_1_jmh l_getmapbenchmark0_0, Blackhole_1_jmh l_blackhole1_1) throws Throwable {
         long operations = 0;
         long realTime = 0;
         result.startTime = System.nanoTime();
         do {
-            l_getmapbenchmark0_0.measureMapGet(l_blackhole1_2);
+            l_getmapbenchmark0_0.measureGetByIterator(l_blackhole1_2);
             operations++;
         } while(!control.isDone);
         result.stopTime = System.nanoTime();
@@ -200,7 +200,7 @@ public final class GetMapBenchmark_measureMapGet {
     }
 
 
-    public Collection<? extends Result> measureMapGet_SampleTime(InfraControl control, ThreadParams threadParams) throws Throwable {
+    public Collection<? extends Result> measureGetByIterator_SampleTime(InfraControl control, ThreadParams threadParams) throws Throwable {
         if (threadParams.getSubgroupIndex() == 0) {
             Blackhole_1_jmh l_blackhole1_1 = _jmh_tryInit_f_blackhole1_1(control, threadParams);
             GetMapBenchmark_1_jmh l_getmapbenchmark0_0 = _jmh_tryInit_f_getmapbenchmark0_0(control, threadParams);
@@ -218,17 +218,17 @@ public final class GetMapBenchmark_measureMapGet {
 
             control.announceWarmupReady();
             while (control.warmupShouldWait) {
-                l_getmapbenchmark0_0.measureMapGet(l_blackhole1_2);
+                l_getmapbenchmark0_0.measureGetByIterator(l_blackhole1_2);
             }
 
             int targetSamples = (int) (control.getDuration(TimeUnit.MILLISECONDS) * 20); // at max, 20 timestamps per millisecond
         int batchSize = control.iterationParams.getBatchSize();
             SampleBuffer buffer = new SampleBuffer();
-            measureMapGet_sample_jmhLoop(control, buffer, targetSamples, control.benchmarkParams.getOpsPerInvocation(), batchSize, l_blackhole1_2, l_getmapbenchmark0_0, l_blackhole1_1);
+            measureGetByIterator_sample_jmhLoop(control, buffer, targetSamples, control.benchmarkParams.getOpsPerInvocation(), batchSize, l_blackhole1_2, l_getmapbenchmark0_0, l_blackhole1_1);
             control.announceWarmdownReady();
             try {
                 while (control.warmdownShouldWait) {
-                    l_getmapbenchmark0_0.measureMapGet(l_blackhole1_2);
+                    l_getmapbenchmark0_0.measureGetByIterator(l_blackhole1_2);
                 }
                 control.preTearDown();
             } catch (InterruptedException ie) {
@@ -255,13 +255,13 @@ public final class GetMapBenchmark_measureMapGet {
                 f_blackhole1_1 = null;
             }
             Collection<Result> results = new ArrayList<Result>();
-            results.add(new SampleTimeResult(ResultRole.PRIMARY, "measureMapGet", buffer, control.benchmarkParams.getTimeUnit()));
+            results.add(new SampleTimeResult(ResultRole.PRIMARY, "measureGetByIterator", buffer, control.benchmarkParams.getTimeUnit()));
             return results;
         } else
             throw new IllegalStateException("Harness failed to distribute threads among groups properly");
     }
 
-    public void measureMapGet_sample_jmhLoop(InfraControl control, SampleBuffer buffer, int targetSamples, long opsPerInv, int batchSize, Blackhole_1_jmh l_blackhole1_2, GetMapBenchmark_1_jmh l_getmapbenchmark0_0, Blackhole_1_jmh l_blackhole1_1) throws Throwable {
+    public void measureGetByIterator_sample_jmhLoop(InfraControl control, SampleBuffer buffer, int targetSamples, long opsPerInv, int batchSize, Blackhole_1_jmh l_blackhole1_2, GetMapBenchmark_1_jmh l_getmapbenchmark0_0, Blackhole_1_jmh l_blackhole1_1) throws Throwable {
         long realTime = 0;
         int rnd = (int)System.nanoTime();
         int rndMask = startRndMask;
@@ -275,7 +275,7 @@ public final class GetMapBenchmark_measureMapGet {
             }
             for (int b = 0; b < batchSize; b++) {
                 if (control.volatileSpoiler) return;
-                l_getmapbenchmark0_0.measureMapGet(l_blackhole1_2);
+                l_getmapbenchmark0_0.measureGetByIterator(l_blackhole1_2);
             }
             if (sample) {
                 buffer.add((System.nanoTime() - time) / opsPerInv);
@@ -290,7 +290,7 @@ public final class GetMapBenchmark_measureMapGet {
     }
 
 
-    public Collection<? extends Result> measureMapGet_SingleShotTime(InfraControl control, ThreadParams threadParams) throws Throwable {
+    public Collection<? extends Result> measureGetByIterator_SingleShotTime(InfraControl control, ThreadParams threadParams) throws Throwable {
         if (threadParams.getSubgroupIndex() == 0) {
             Blackhole_1_jmh l_blackhole1_1 = _jmh_tryInit_f_blackhole1_1(control, threadParams);
             GetMapBenchmark_1_jmh l_getmapbenchmark0_0 = _jmh_tryInit_f_getmapbenchmark0_0(control, threadParams);
@@ -308,7 +308,7 @@ public final class GetMapBenchmark_measureMapGet {
 
             RawResults res = new RawResults(control.benchmarkParams.getOpsPerInvocation());
         int batchSize = control.iterationParams.getBatchSize();
-            measureMapGet_ss_jmhStub(control, batchSize, res, l_blackhole1_2, l_getmapbenchmark0_0, l_blackhole1_1);
+            measureGetByIterator_ss_jmhStub(control, batchSize, res, l_blackhole1_2, l_getmapbenchmark0_0, l_blackhole1_1);
                 control.preTearDown();
             if (l_blackhole1_2.readyIteration) {
                 l_blackhole1_2.readyIteration = false;
@@ -331,18 +331,18 @@ public final class GetMapBenchmark_measureMapGet {
                 f_blackhole1_1 = null;
             }
             Collection<Result> results = new ArrayList<Result>();
-            results.add(new SingleShotResult(ResultRole.PRIMARY, "measureMapGet", res.getTime(), control.benchmarkParams.getTimeUnit()));
+            results.add(new SingleShotResult(ResultRole.PRIMARY, "measureGetByIterator", res.getTime(), control.benchmarkParams.getTimeUnit()));
             return results;
         } else
             throw new IllegalStateException("Harness failed to distribute threads among groups properly");
     }
 
-    public void measureMapGet_ss_jmhStub(InfraControl control, int batchSize, RawResults result, Blackhole_1_jmh l_blackhole1_2, GetMapBenchmark_1_jmh l_getmapbenchmark0_0, Blackhole_1_jmh l_blackhole1_1) throws Throwable {
+    public void measureGetByIterator_ss_jmhStub(InfraControl control, int batchSize, RawResults result, Blackhole_1_jmh l_blackhole1_2, GetMapBenchmark_1_jmh l_getmapbenchmark0_0, Blackhole_1_jmh l_blackhole1_1) throws Throwable {
         long realTime = 0;
         result.startTime = System.nanoTime();
         for (int b = 0; b < batchSize; b++) {
             if (control.volatileSpoiler) return;
-            l_getmapbenchmark0_0.measureMapGet(l_blackhole1_2);
+            l_getmapbenchmark0_0.measureGetByIterator(l_blackhole1_2);
         }
         result.stopTime = System.nanoTime();
         result.realTime = realTime;
